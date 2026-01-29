@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon index.js",
+    "start": "node index.js"
   },
   "keywords": [
     "qrcode"
@@ -16,5 +17,8 @@
     "express": "^4.21.2",
     "mongoose": "^8.10.1",
     "qrcode": "^1.5.4"
+  },
+  "devDependencies": {
+    "nodemon": "^3.1.11"
   }
 }

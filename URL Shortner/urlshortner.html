@@ -5,38 +5,105 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <meta name="description" content="This website is to shorten the URLs">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Space+Grotesk:wght@500;600&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="urlstyle.css">
     <link rel="shortcut icon" href="link.png" type="image/x-icon">
-    <title>Url Shortner</title>
+    <title>URL Shortener - Fast & Simple</title>
 </head>
 <body>
+    <div class="theme-toggle">
+        <button id="theme-btn" aria-label="Toggle theme">
+            <svg class="sun-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <circle cx="12" cy="12" r="5"></circle>
+                <line x1="12" y1="1" x2="12" y2="3"></line>
+                <line x1="12" y1="21" x2="12" y2="23"></line>
+                <line x1="4.22" y1="4.22" x2="5.64" y2="5.64"></line>
+                <line x1="18.36" y1="18.36" x2="19.78" y2="19.78"></line>
+                <line x1="1" y1="12" x2="3" y2="12"></line>
+                <line x1="21" y1="12" x2="23" y2="12"></line>
+                <line x1="4.22" y1="19.78" x2="5.64" y2="18.36"></line>
+                <line x1="18.36" y1="5.64" x2="19.78" y2="4.22"></line>
+            </svg>
+            <svg class="moon-icon" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
+            </svg>
+        </button>
+    </div>
+
     <header>
         <div class="head">
-            <h1 class="heading">URL Shortner</h1>
+            <h1 class="heading">URL Shortener</h1>
+            <p class="subtitle">Make your links shorter, faster, and easier to share</p>
         </div>
     </header>
 
     <main>
         <div class="container">
-            <div id="original">
-                <label for="origininput">Enter the URL</label>
-                <input type="text" name="originalinput" id="origininput">
-            </div>
-            <div id="change">
-                <label for="shortinput">Enter the short URL</label>
-                <input type="text" name="shorturl" id="shortinput">
-            </div>
-            <div id="but">
-                <button>ShortURL</button>
-            </div>
-             <div>
-                <h2>Shorted URL</h2>
-                <div id="result">
-                 
+            <div class="input-section">
+                <div class="input-group" id="original">
+                    <label for="origininput">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71"></path>
+                            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71"></path>
+                        </svg>
+                        Original URL
+                    </label>
+                    <input type="url" name="originalinput" id="origininput" placeholder="https://example.com/your-long-url">
                 </div>
-             </div>
+
+                <div class="input-group" id="change">
+                    <label for="shortinput">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <rect x="3" y="11" width="18" height="11" rx="2" ry="2"></rect>
+                            <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                        </svg>
+                        Custom Short Code
+                    </label>
+                    <div class="input-with-prefix">
+                        <span class="url-prefix">localhost:4000/</span>
+                        <input type="text" name="shorturl" id="shortinput" placeholder="my-link">
+                    </div>
+                </div>
+
+                <div id="but">
+                    <button id="shorten-btn">
+                        <span>Shorten URL</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <line x1="5" y1="12" x2="19" y2="12"></line>
+                            <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                    </button>
+                </div>
+            </div>
+
+            <div class="result-section">
+                <div class="result-header">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <polyline points="20 6 9 17 4 12"></polyline>
+                    </svg>
+                    <h2>Your Shortened URL</h2>
+                </div>
+                <div id="result" class="result-container">
+                    <div class="placeholder-text">
+                        <svg width="60" height="60" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <path d="M8 14s1.5 2 4 2 4-2 4-2"></path>
+                            <line x1="9" y1="9" x2="9.01" y2="9"></line>
+                            <line x1="15" y1="9" x2="15.01" y2="9"></line>
+                        </svg>
+                        <p>Your shortened link will appear here</p>
+                    </div>
+                </div>
+            </div>
         </div>
     </main>
+
+    <footer>
+        <p>Made with <span class="heart">❤</span> by <a href="https://github.com/SurajSingh9696" target="_blank" rel="noopener noreferrer" class="author">Suraj Singh</a></p>
+    </footer>
+
     <script src="url.js"></script>
 </body>
 </html>
